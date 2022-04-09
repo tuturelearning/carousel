@@ -1,0 +1,64 @@
+.carousel {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.carousel-inner {
+  height: 100%;
+  transition: all 1s ease;
+
+  &-wrap {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.carousel-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.carousel-control {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.dots-item {
+  width: 70px;
+  height: 5px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 24px;
+  background-color: rgba(233, 233, 233, 0.5);
+  position: relative;
+  margin-right: 20px;
+
+  &-main {
+    width: 0px;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 24px;
+
+    &.active {
+      animation: panoramic 3s linear;
+    }
+
+    &.clear-animation {
+      animation: none;
+    }
+  }
+}
+
+@keyframes panoramic {
+  to {
+    width: 100%;
+  }
+}
